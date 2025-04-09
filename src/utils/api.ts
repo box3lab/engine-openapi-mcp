@@ -20,15 +20,23 @@ export async function makeApiRequest(
 ) {
   try {
     if (file) {
+      const fileContent = Buffer.isBuffer(file)
+        ? file
+        : Buffer.from(file, "utf-8");
+
       const formData = new FormData();
-      formData.append("file", file);
+
       if (data) {
         Object.keys(data).forEach((key) => {
           formData.append(key, data[key]);
         });
       }
+      formData.append("file", fileContent, {
+        filename: data.name || "App.js",
+        contentType: "application/javascript",
+      });
+
       data = formData;
-      headers = { ...headers, ...formData.getHeaders() };
     }
 
     const response = await axios({
