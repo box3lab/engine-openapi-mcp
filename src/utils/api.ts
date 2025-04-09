@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { API_BASE_URL, AuthHeaders } from "../types/index.js";
 import FormData from "form-data";
 
@@ -31,20 +31,33 @@ export async function makeApiRequest(
           formData.append(key, data[key]);
         });
       }
-      formData.append("file", fileContent, {
+
+      const blob = new Blob([fileContent], { type: "application/javascript" });
+      formData.append("file", blob, {
         filename: data.name || "App.js",
-        contentType: "application/javascript",
       });
       headers["Content-Type"] = "multipart/form-data";
       data = formData;
     }
-    headers["Content-Type"] = "application/json";
-    const response = await axios({
+
+    // 创建配置对象
+    const config: AxiosRequestConfig<any> = {
       method,
       url: `${API_BASE_URL}${endpoint}`,
       headers,
-      data,
-    });
+    };
+
+    // 如果是 GET 请求，参数放入 params
+    if (method === "GET" && data) {
+      config.params = data;
+    }
+    // 如果是 POST 或 DELETE 请求，参数放入 data
+    else if (data) {
+      headers["Content-Type"] = "application/json";
+      config.data = data;
+    }
+
+    const response = await axios(config);
     return {
       content: [
         {
