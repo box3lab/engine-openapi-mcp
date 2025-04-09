@@ -26,8 +26,10 @@ export async function makeApiRequest(endpoint, method, headers, data, file) {
                 filename: data.name || "App.js",
                 contentType: "application/javascript",
             });
+            headers["Content-Type"] = "multipart/form-data";
             data = formData;
         }
+        headers["Content-Type"] = "application/json";
         const response = await axios({
             method,
             url: `${API_BASE_URL}${endpoint}`,
