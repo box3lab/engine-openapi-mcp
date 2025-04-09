@@ -18,10 +18,10 @@
 
 #### 基础操作
 
-| 工具名称              | 描述                     | 必要参数                                              |
-| --------------------- | ------------------------ | ----------------------------------------------------- |
-| `script.saveOrUpdate` | A 保存或更新神岛引擎脚本 | `mapId`, `name`, `type`, `file`, `token`, `userAgent` |
-| `script.rename`       | 重命名神岛引擎脚本       | `mapId`, `name`, `newName`, `token`, `userAgent`      |
+| 工具名称              | 描述                     | 必要参数                        |
+| --------------------- | ------------------------ | ------------------------------- |
+| `script.saveOrUpdate` | A 保存或更新神岛引擎脚本 | `mapId`, `name`, `type`, `file` |
+| `script.rename`       | 重命名神岛引擎脚本       | `mapId`, `name`, `newName`      |
 
 #### 代码辅助提示
 
@@ -35,12 +35,12 @@
 
 #### 基础操作
 
-| 工具名称         | 描述                       | 必要参数                                                     |
-| ---------------- | -------------------------- | ------------------------------------------------------------ |
-| `storage.get`    | 存储空间单 key 值查询      | `key`, `mapId`, `storageName`, `token`, `userAgent`          |
-| `storage.set`    | 存储空间单 key 值写入/更新 | `key`, `mapId`, `storageName`, `value`, `token`, `userAgent` |
-| `storage.remove` | 存储空间单 key 值删除      | `key`, `mapId`, `storageName`, `token`, `userAgent`          |
-| `storage.page`   | 存储空间分页查询           | `key`, `mapId`, `storageName`, `token`, `userAgent`          |
+| 工具名称         | 描述                       | 必要参数                               |
+| ---------------- | -------------------------- | -------------------------------------- |
+| `storage.get`    | 存储空间单 key 值查询      | `key`, `mapId`, `storageName`          |
+| `storage.set`    | 存储空间单 key 值写入/更新 | `key`, `mapId`, `storageName`, `value` |
+| `storage.remove` | 存储空间单 key 值删除      | `key`, `mapId`, `storageName`          |
+| `storage.page`   | 存储空间分页查询           | `mapId`, `storageName`                 |
 
 #### 存储辅助提示
 

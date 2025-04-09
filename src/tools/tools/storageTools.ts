@@ -111,7 +111,6 @@ export function registerStorageTools(server: McpServer) {
     "storage.page",
     "存储空间分页查询",
     {
-      key: z.string().describe("存储空间key，key(length<=1000)"),
       mapId: z.string().describe("地图id(扩展地图为主图id)"),
       constraint: z
         .object({
@@ -148,7 +147,6 @@ export function registerStorageTools(server: McpServer) {
     },
     async (
       {
-        key,
         mapId,
         storageName,
         isGroup,
@@ -162,7 +160,6 @@ export function registerStorageTools(server: McpServer) {
     ) => {
       const headers = createAuthHeaders(token, userAgent);
       return await makeApiRequest(`/storage/page`, "GET", headers, {
-        key,
         mapId,
         storageName,
         isGroup,

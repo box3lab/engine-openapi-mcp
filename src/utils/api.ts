@@ -32,10 +32,11 @@ export async function makeApiRequest(
         });
       }
 
-      const blob = new Blob([fileContent], { type: "application/javascript" });
-      formData.append("file", blob, {
+      formData.append("file", fileContent, {
         filename: data.name || "App.js",
+        contentType: "application/javascript",
       });
+
       headers["Content-Type"] = "multipart/form-data";
       data = formData;
     }

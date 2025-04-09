@@ -83,7 +83,6 @@ export function registerStorageTools(server) {
      * 存储空间分页查询
      */
     server.tool("storage.page", "存储空间分页查询", {
-        key: z.string().describe("存储空间key，key(length<=1000)"),
         mapId: z.string().describe("地图id(扩展地图为主图id)"),
         constraint: z
             .object({
@@ -115,10 +114,9 @@ export function registerStorageTools(server) {
         limit: z.number().describe("查询数量(缺省：10，最大：100)").optional(),
         offset: z.number().describe("偏移量(缺省：0)").optional(),
         ...authParams,
-    }, async ({ key, mapId, storageName, isGroup, constraint, limit, offset, token, userAgent, }, extra) => {
+    }, async ({ mapId, storageName, isGroup, constraint, limit, offset, token, userAgent, }, extra) => {
         const headers = createAuthHeaders(token, userAgent);
         return await makeApiRequest(`/storage/page`, "GET", headers, {
-            key,
             mapId,
             storageName,
             isGroup,
