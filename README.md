@@ -1,5 +1,7 @@
 # 神岛引擎 OpenAPI MCP 工具集
 
+[![smithery badge](https://smithery.ai/badge/@box3lab/engine-openapi-mcp)](https://smithery.ai/server/@box3lab/engine-openapi-mcp)
+
 这个项目提供了一系列用于神岛引擎的 OpenAPI MCP (Model Context Protocol) 工具，帮助 AI 更高效地调用引擎接口。
 
 ## 功能概览
