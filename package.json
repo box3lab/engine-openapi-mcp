@@ -1,6 +1,6 @@
 {
   "name": "@dao3fun/engine-openapi-mcp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "神岛引擎开放接口MCP服务",
   "main": "build/index.js",
   "type": "module",

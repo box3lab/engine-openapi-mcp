@@ -53,7 +53,11 @@ export function registerStorageTools(server: McpServer) {
         .boolean()
         .describe("是否为扩展地图组（缺省：false）")
         .optional(),
-      value: z.string().describe("值(json, size<=2MB)"),
+      value: z
+        .string()
+        .describe(
+          'json字符串值(json, size<=2MB)，格式必须是{"content": value}，value为用户输入的内容'
+        ),
       ...authParams,
     },
     async (

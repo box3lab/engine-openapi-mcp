@@ -58,7 +58,7 @@ const scriptResult = await mcpClient.callTool("script.saveOrUpdate", {
   mapId: "your-map-id",
   name: "example.js",
   type: "0", // 0-服务器脚本、1-客户端脚本
-  file: new File([scriptContent], "example.js"),
+  file: "console.log('hi')",
   token: "your-auth-token",
   userAgent: "your-user-agent",
 });
@@ -194,7 +194,6 @@ const result = await client.callTool({
 
 - 数值类型的参数（如 limit、offset）必须是数字
 - 布尔值参数（如 isGroup）必须是布尔值
-- 文件参数必须是 File 对象
 
 ## 贡献指南
 

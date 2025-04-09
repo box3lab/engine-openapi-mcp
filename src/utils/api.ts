@@ -16,7 +16,7 @@ export async function makeApiRequest(
   method: "GET" | "POST" | "DELETE",
   headers?: any,
   data?: any,
-  file?: File
+  file?: string
 ) {
   try {
     if (file) {

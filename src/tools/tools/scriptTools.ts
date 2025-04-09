@@ -18,7 +18,7 @@ export function registerScriptTools(server: McpServer) {
       mapId: z.string().describe("地图ID"),
       name: z.string().describe("脚本名称（.js后缀必传）"),
       type: z.string().describe("脚本类型：0-服务器脚本、1-客户端脚本"),
-      file: z.instanceof(File).describe("脚本文件"),
+      file: z.string().describe("脚本内容"),
       ...authParams,
     },
     async ({ name, mapId, type, file, token, userAgent }, extra) => {
