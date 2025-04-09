@@ -58,7 +58,7 @@ export async function makeApiRequest(
       config.data = data;
     }
     config.url = `${API_BASE_URL}${endpoint}`;
-
+    config.method = method;
     config.headers = headers;
     const response = await axios(config);
     return {
