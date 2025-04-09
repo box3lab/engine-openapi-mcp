@@ -57,7 +57,9 @@ export async function makeApiRequest(
       headers["Content-Type"] = "application/json";
       config.data = data;
     }
+    config.url = `${API_BASE_URL}${endpoint}`;
 
+    config.headers = headers;
     const response = await axios(config);
     return {
       content: [
