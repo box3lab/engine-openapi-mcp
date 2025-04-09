@@ -16,37 +16,37 @@
 
 #### 基础操作
 
-| 工具名称              | 描述                     | 必要参数                                              | 可选参数 |
-| --------------------- | ------------------------ | ----------------------------------------------------- | -------- |
-| `script.saveOrUpdate` | A 保存或更新神岛引擎脚本 | `mapId`, `name`, `type`, `file`, `token`, `userAgent` | -        |
-| `script.rename`       | 重命名神岛引擎脚本       | `mapId`, `name`, `newName`, `token`, `userAgent`      | -        |
+| 工具名称              | 描述                     | 必要参数                                              |
+| --------------------- | ------------------------ | ----------------------------------------------------- |
+| `script.saveOrUpdate` | A 保存或更新神岛引擎脚本 | `mapId`, `name`, `type`, `file`, `token`, `userAgent` |
+| `script.rename`       | 重命名神岛引擎脚本       | `mapId`, `name`, `newName`, `token`, `userAgent`      |
 
 #### 代码辅助提示
 
-| 提示名称          | 描述                                             | 必要参数      | 可选参数       |
-| ----------------- | ------------------------------------------------ | ------------- | -------------- |
-| `script.review`   | 审查神岛引擎脚本代码，提供改进建议和潜在问题分析 | `code`        | -              |
-| `script.generate` | 根据描述和需求生成神岛引擎脚本代码               | `description` | `requirements` |
-| `script.optimize` | 优化神岛引擎脚本代码，提高性能或可读性           | `code`        | `goal`         |
+| 提示名称          | 描述                                             | 必要参数      |
+| ----------------- | ------------------------------------------------ | ------------- |
+| `script.review`   | 审查神岛引擎脚本代码，提供改进建议和潜在问题分析 | `code`        |
+| `script.generate` | 根据描述和需求生成神岛引擎脚本代码               | `description` |
+| `script.optimize` | 优化神岛引擎脚本代码，提高性能或可读性           | `code`        |
 
 ### 存储管理工具 (Storage Tools)
 
 #### 基础操作
 
-| 工具名称         | 描述                       | 必要参数                                                     | 可选参数                                   |
-| ---------------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------ | --- |
-| `storage.get`    | 存储空间单 key 值查询      | `key`, `mapId`, `storageName`, `token`, `userAgent`          | `isGroup`                                  |
-| `storage.set`    | 存储空间单 key 值写入/更新 | `key`, `mapId`, `storageName`, `value`, `token`, `userAgent` | `isGroup`                                  |
-| `storage.remove` | 存储空间单 key 值删除      | `key`, `mapId`, `storageName`, `token`, `userAgent`          | `isGroup`                                  |
-| `storage.page`   | 存储空间分页查询           | `key`, `mapId`, `storageName`, `token`, `userAgent`          | `constraint`, `isGroup`, `limit`, `offset` |     |
+| 工具名称         | 描述                       | 必要参数                                                     |
+| ---------------- | -------------------------- | ------------------------------------------------------------ |
+| `storage.get`    | 存储空间单 key 值查询      | `key`, `mapId`, `storageName`, `token`, `userAgent`          |
+| `storage.set`    | 存储空间单 key 值写入/更新 | `key`, `mapId`, `storageName`, `value`, `token`, `userAgent` |
+| `storage.remove` | 存储空间单 key 值删除      | `key`, `mapId`, `storageName`, `token`, `userAgent`          |
+| `storage.page`   | 存储空间分页查询           | `key`, `mapId`, `storageName`, `token`, `userAgent`          |
 
 #### 存储辅助提示
 
-| 提示名称                | 描述                             | 必要参数                        | 可选参数                                 |
-| ----------------------- | -------------------------------- | ------------------------------- | ---------------------------------------- |
-| `storage.designSchema`  | 为游戏功能设计键值对数据存储结构 | `gameFeatures`                  | `dataRequirements`                       |
-| `storage.migrationPlan` | 设计存储数据迁移方案             | `currentSchema`, `targetSchema` | `constraints`                            |
-| `storage.optimizeQuery` | 优化键值对数据查询方案           | `queryDescription`              | `currentImplementation`, `dataStructure` |
+| 提示名称                | 描述                             | 必要参数                        |
+| ----------------------- | -------------------------------- | ------------------------------- |
+| `storage.designSchema`  | 为游戏功能设计键值对数据存储结构 | `gameFeatures`                  |
+| `storage.migrationPlan` | 设计存储数据迁移方案             | `currentSchema`, `targetSchema` |
+| `storage.optimizeQuery` | 优化键值对数据查询方案           | `queryDescription`              |
 
 ## 使用示例
 
