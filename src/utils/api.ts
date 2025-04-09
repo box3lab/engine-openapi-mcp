@@ -54,12 +54,8 @@ export async function makeApiRequest(
     }
     // 如果是 POST 或 DELETE 请求，参数放入 data
     else if (data) {
-      headers["Content-Type"] = "application/json";
       config.data = data;
     }
-    config.url = `${API_BASE_URL}${endpoint}`;
-    config.method = method;
-    config.headers = headers;
     const response = await axios(config);
     return {
       content: [
