@@ -1,10 +1,11 @@
 {
-  "name": "@dao3fun/engine-openapi-mcp",
-  "version": "0.0.2",
+  "name": "@box3lab/engine-openapi-mcp",
+  "version": "0.0.3",
   "description": "神岛引擎开放接口MCP服务",
   "main": "build/index.js",
   "type": "module",
   "scripts": {
+    "publish": "npm publish ",
     "start": "node build/index.js",
     "dev": "tsc -w",
     "build": "tsc && chmod 755 build/index.js",
@@ -33,9 +34,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dao3fun/engine-openapi-mcp"
+    "url": "https://github.com/box3lab/engine-openapi-mcp"
   },
   "bugs": {
-    "url": "https://github.com/dao3fun/engine-openapi-mcp/issues"
+    "url": "https://github.com/box3lab/engine-openapi-mcp/issues"
   }
 }
